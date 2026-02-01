@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install OpenClaw globally
+# CACHE_BUST arg invalidates cache to ensure latest version
+ARG CACHE_BUST
 RUN npm install -g openclaw@latest
 
 WORKDIR /data
