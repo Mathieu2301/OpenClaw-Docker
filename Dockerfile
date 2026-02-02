@@ -25,6 +25,9 @@ WORKDIR /data
 # Set environment variables for non-interactive mode
 ENV OPENCLAW_NO_PROMPT=1
 ENV OPENCLAW_NO_ONBOARD=1
+ENV OPENCLAW_STATE_DIR=/data/.openclaw
+ENV OPENCLAW_WORKSPACE_DIR=/data/workspace
+ENV PORT=3000
 
 # Default command - starts a shell for manual configuration
 EXPOSE 3000
