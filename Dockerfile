@@ -20,13 +20,9 @@ RUN apt-get update && apt-get install -y \
 ARG CACHE_BUST
 RUN npm install -g openclaw@latest
 
-WORKDIR /data
-
 # Set environment variables for non-interactive mode
 ENV OPENCLAW_NO_PROMPT=1
 ENV OPENCLAW_NO_ONBOARD=1
-ENV OPENCLAW_STATE_DIR=/data/.openclaw
-ENV OPENCLAW_WORKSPACE_DIR=/data/workspace
 ENV PORT=3000
 
 # Default command - starts a shell for manual configuration
