@@ -27,4 +27,4 @@ ENV PORT=3000
 
 # Default command - starts a shell for manual configuration
 EXPOSE 3000
-CMD ["openclaw", "gateway", "--allow-unconfigured", "--bind", "lan"]
+CMD openclaw gateway --allow-unconfigured --bind lan --token "$OPENCLAW_GATEWAY_TOKEN"
