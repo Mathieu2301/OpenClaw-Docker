@@ -25,6 +25,9 @@ ENV OPENCLAW_NO_PROMPT=1
 ENV OPENCLAW_NO_ONBOARD=1
 ENV PORT=3000
 
+# Pre-warm jiti cache so the gateway starts instantly
+RUN timeout 60 openclaw 2>&1 || true
+
 # Default command - starts a shell for manual configuration
 EXPOSE 3000
 CMD ["openclaw", "gateway", "--allow-unconfigured", "--bind", "lan"]
