@@ -30,4 +30,4 @@ RUN timeout 60 openclaw 2>&1 || true
 
 # Default command - starts a shell for manual configuration
 EXPOSE 3000
-CMD ["openclaw", "gateway", "--allow-unconfigured", "--bind", "lan"]
+CMD openclaw gateway --allow-unconfigured --bind lan --token "$OPENCLAW_GATEWAY_TOKEN"
